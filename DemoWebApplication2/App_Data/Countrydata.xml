@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<countries>
+  <country>
+    <countryID>1</countryID>
+    <countryName>India</countryName>
+  </country>  
+<country>
+    <countryID>2</countryID>
+    <countryName>USA</countryName>
+  </country>  
+<country>
+    <countryID>3</countryID>
+    <countryName>Canada</countryName>
+  </country>  
+<country>
+    <countryID>4</countryID>
+    <countryName>UK</countryName>
+  </country>  
+<country>
+    <countryID>5</countryID>
+    <countryName>Australia</countryName>
+  </country>  
+<country>
+    <countryID>6</countryID>
+    <countryName>Ireland</countryName>
+  </country>  
+<country>
+    <countryID>7</countryID>
+    <countryName>France</countryName>
+  </country>  
+</countries> 

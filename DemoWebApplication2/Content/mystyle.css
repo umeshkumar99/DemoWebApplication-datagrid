@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.txtBox
+{
+
+    font-family:Arial;
+    font-size:14px;
+    border:groove;
+    border-color:brown;
+    box-shadow:inset;
+    width:200px;
+    height:20px;
+}

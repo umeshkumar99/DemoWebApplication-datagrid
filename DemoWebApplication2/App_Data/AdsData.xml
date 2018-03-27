@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>~/Images/Google.png</ImageUrl>
+    <NavigateUrl>http://google.com</NavigateUrl>
+    <AlternateText>Please visit http://www.Google.com</AlternateText>
+    <Impressions>10</Impressions>
+    <keyword>Google</keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/yahoo.png</ImageUrl>
+    <NavigateUrl>http://yahoo.com</NavigateUrl>
+    <AlternateText>Please visit http://www.yahoo.com</AlternateText>
+    <Impressions>20</Impressions>
+  <keyword>Yahoo</keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/Youtube.png</ImageUrl>
+    <NavigateUrl>http://Youtube.com</NavigateUrl>
+    <AlternateText>Please visit http://www.Youtube.com</AlternateText>
+    <Impressions>40</Impressions>
+  <keyword>Google</keyword>
+  </Ad>
+</Advertisements> 
+
+<!--XML file attributes
+ImageUrl - The URL of the image to display
+NavigateUrl - The URL to navigate to, when the ad is clicked
+AlternateText - The text to use if the image is missing
+Keyword - Used by the adrotator control to filter ads
+Impressions - A numeric value (a weighting number) that indicates the likelihood of how often the ad is displayed.-->  
