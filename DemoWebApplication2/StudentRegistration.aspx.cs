@@ -69,6 +69,8 @@ namespace DemoWebApplication2
                     Response.Write("<script>alert('Wow data added successfully...')</script>");
                         FillGrid();
                     }
+                    if (conn.State == ConnectionState.Open)
+                        conn.Close();
                 }
             }
             catch(Exception ex)
@@ -112,8 +114,8 @@ namespace DemoWebApplication2
 
                     lbl = (Label)GridView1.Rows[index].Cells[3].FindControl("lblfee");
                     txtfees.Text = lbl.Text;
-
-
+                    Image img = (Image)GridView1.Rows[index].Cells[4].FindControl("imgPhoto");
+                    imgDemo.ImageUrl = img.ImageUrl;
                     //if accessing TemplateFields then use FindControl method
 
 
@@ -126,8 +128,26 @@ namespace DemoWebApplication2
 
                     lbl = (Label)GridView1.Rows[index].Cells[0].FindControl("lblId");
                     //iNodeId = Convert.ToInt32(lbl.Text);
+                    string sql = "delete from student where sno=" + lbl.Text;
 
-                   
+                    string strConn = ConfigurationManager.ConnectionStrings["PartitionTestConnectionString"].ToString();
+                    SqlConnection conn = new SqlConnection(strConn);
+                    conn.Open();
+
+                    using (conn)
+                    {
+                        SqlCommand cmd = new SqlCommand(sql, conn);
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandTimeout = 0;
+                        int result = cmd.ExecuteNonQuery();
+                        if(result>=1)
+                        Response.Write("<script>alert('data Deleted successfully...')</script>");
+                        else
+                            Response.Write("<script>alert('There is some issue while deleting data . please contact admin...')</script>");
+                            FillGrid();
+                    }
+                    if (conn.State == ConnectionState.Open)
+                        conn.Close();
                 }
                
             }

@@ -11,16 +11,16 @@ namespace DemoWebApplication2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Write(HttpContext.Current.Request.UserHostAddress + " " + Request.UserHostName + " " + Request.UserAgent);
-            Response.Write("<br>REMOTE_ADDR=" + Request.ServerVariables["REMOTE_ADDR"]);
-            string myExternalIP;
-            string strHostName = System.Net.Dns.GetHostName();
-            string clientIPAddress = System.Net.Dns.GetHostAddresses(strHostName).GetValue(0).ToString();
-            Response.Write("<br>strHostName=" + strHostName);
-            Response.Write("<br>clientIPAddress=" + clientIPAddress);
-            Response.Write("<script>  alert('"+ clientIPAddress+"'); </script>");
-            Guid gd = Guid.NewGuid();
-            Response.Write("<br>GUID=" + gd.ToString());
+            //Response.Write(HttpContext.Current.Request.UserHostAddress + " " + Request.UserHostName + " " + Request.UserAgent);
+            //Response.Write("<br>REMOTE_ADDR=" + Request.ServerVariables["REMOTE_ADDR"]);
+            //string myExternalIP;
+            //string strHostName = System.Net.Dns.GetHostName();
+            //string clientIPAddress = System.Net.Dns.GetHostAddresses(strHostName).GetValue(0).ToString();
+            //Response.Write("<br>strHostName=" + strHostName);
+            //Response.Write("<br>clientIPAddress=" + clientIPAddress);
+            //Response.Write("<script>  alert('"+ clientIPAddress+"'); </script>");
+            //Guid gd = Guid.NewGuid();
+            //Response.Write("<br>GUID=" + gd.ToString());
         }
     }
 } 

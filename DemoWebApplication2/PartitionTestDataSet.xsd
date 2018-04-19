@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PartitionTestDataSet" targetNamespace="http://tempuri.org/PartitionTestDataSet.xsd" xmlns:mstns="http://tempuri.org/PartitionTestDataSet.xsd" xmlns="http://tempuri.org/PartitionTestDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="PartitionTestConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PartitionTestConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.PartitionTestConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwtestTableAdapter" GeneratorDataComponentClassName="vwtestTableAdapter" Name="vwtest" UserDataComponentName="vwtestTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PartitionTestConnectionString (Web.config)" DbObjectName="PartitionTest.dbo.vwtest" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT PhotoID, Customer, RecordDate, Outlet, BannerName FROM dbo.vwtest</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PhotoID" DataSetColumn="PhotoID" />
+              <Mapping SourceColumn="Customer" DataSetColumn="Customer" />
+              <Mapping SourceColumn="RecordDate" DataSetColumn="RecordDate" />
+              <Mapping SourceColumn="Outlet" DataSetColumn="Outlet" />
+              <Mapping SourceColumn="BannerName" DataSetColumn="BannerName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PartitionTestDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PartitionTestDataSet" msprop:Generator_UserDSName="PartitionTestDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vwtest" msprop:Generator_TableClassName="vwtestDataTable" msprop:Generator_TableVarName="tablevwtest" msprop:Generator_TablePropName="vwtest" msprop:Generator_RowDeletingName="vwtestRowDeleting" msprop:Generator_RowChangingName="vwtestRowChanging" msprop:Generator_RowEvHandlerName="vwtestRowChangeEventHandler" msprop:Generator_RowDeletedName="vwtestRowDeleted" msprop:Generator_UserTableName="vwtest" msprop:Generator_RowChangedName="vwtestRowChanged" msprop:Generator_RowEvArgName="vwtestRowChangeEvent" msprop:Generator_RowClassName="vwtestRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PhotoID" msprop:Generator_ColumnVarNameInTable="columnPhotoID" msprop:Generator_ColumnPropNameInRow="PhotoID" msprop:Generator_ColumnPropNameInTable="PhotoIDColumn" msprop:Generator_UserColumnName="PhotoID" type="xs:int" />
+              <xs:element name="Customer" msprop:Generator_ColumnVarNameInTable="columnCustomer" msprop:Generator_ColumnPropNameInRow="Customer" msprop:Generator_ColumnPropNameInTable="CustomerColumn" msprop:Generator_UserColumnName="Customer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RecordDate" msprop:Generator_ColumnVarNameInTable="columnRecordDate" msprop:Generator_ColumnPropNameInRow="RecordDate" msprop:Generator_ColumnPropNameInTable="RecordDateColumn" msprop:Generator_UserColumnName="RecordDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Outlet" msprop:Generator_ColumnVarNameInTable="columnOutlet" msprop:Generator_ColumnPropNameInRow="Outlet" msprop:Generator_ColumnPropNameInTable="OutletColumn" msprop:Generator_UserColumnName="Outlet" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BannerName" msprop:Generator_ColumnVarNameInTable="columnBannerName" msprop:Generator_ColumnPropNameInRow="BannerName" msprop:Generator_ColumnPropNameInTable="BannerNameColumn" msprop:Generator_UserColumnName="BannerName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

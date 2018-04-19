@@ -48,11 +48,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -185,8 +190,6 @@
     <Content Include="App_Data\Countrydata.xml" />
     <Content Include="App_Data\XMLFile1.xml" />
     <Content Include="App_Data\XMLFile2.xml" />
-    <Content Include="commanpage.aspx" />
-    <Content Include="Confirmation.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -211,6 +214,7 @@
     <Content Include="Imageuploaddisplay.aspx" />
     <Content Include="MultiviewDemo.aspx" />
     <Content Include="NestedDataGridDemo.aspx" />
+    <Content Include="Reportdemo.aspx" />
     <Content Include="Service References\Service1\DemoWebApplication2.Service1.ArrayOfClsProductInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -234,12 +238,16 @@
     <Content Include="StudentRegistration.aspx" />
     <Content Include="TemplateField.aspx" />
     <Content Include="Wizardemo.aspx" />
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Content Include="PartitionTestDataSet.xsc">
+      <DependentUpon>PartitionTestDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="PartitionTestDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PartitionTestDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PartitionTestDataSet.xss">
+      <DependentUpon>PartitionTestDataSet.xsd</DependentUpon>
     </Content>
     <None Include="Service References\Service1\DemoWebService.disco" />
     <None Include="Service References\Service1\configuration91.svcinfo" />
@@ -252,6 +260,7 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Site2.Master" />
+    <Content Include="Site3.Master" />
     <None Include="Web References\service2\DemoWebService.disco" />
     <Content Include="Jquerydemo.aspx" />
     <None Include="Properties\Settings.settings">
@@ -469,20 +478,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="commanpage.aspx.cs">
-      <DependentUpon>commanpage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="commanpage.aspx.designer.cs">
-      <DependentUpon>commanpage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Confirmation.aspx.cs">
-      <DependentUpon>Confirmation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Confirmation.aspx.designer.cs">
-      <DependentUpon>Confirmation.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -591,11 +586,6 @@
     <Compile Include="ImageUploadinDB.aspx.designer.cs">
       <DependentUpon>ImageUploadinDB.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="MultiviewDemo.aspx.cs">
       <DependentUpon>MultiviewDemo.aspx</DependentUpon>
@@ -622,6 +612,11 @@
     <Compile Include="PageLfeCycle.aspx.designer.cs">
       <DependentUpon>PageLfeCycle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PartitionTestDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartitionTestDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -634,6 +629,13 @@
     </Compile>
     <Compile Include="Repeater.aspx.designer.cs">
       <DependentUpon>Repeater.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportdemo.aspx.cs">
+      <DependentUpon>Reportdemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportdemo.aspx.designer.cs">
+      <DependentUpon>Reportdemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="RunTimeControls.aspx.cs">
       <DependentUpon>RunTimeControls.aspx</DependentUpon>
@@ -688,6 +690,13 @@
     </Compile>
     <Compile Include="Site2.Master.designer.cs">
       <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site3.Master.cs">
+      <DependentUpon>Site3.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site3.Master.designer.cs">
+      <DependentUpon>Site3.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="StudentRegistration.aspx.cs">
@@ -769,6 +778,13 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>DemoWebApplication2_service2_DemoWebService</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

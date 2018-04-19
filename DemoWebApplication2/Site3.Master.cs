@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace DemoWebApplication2
 {
-    public partial class Confirmation : System.Web.UI.Page
+    public partial class Site3 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
